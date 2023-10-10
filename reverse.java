@@ -1,3 +1,5 @@
+package PersonalQuestions;
+
 import java.util.Scanner;
 import java.lang.StringBuilder;
 

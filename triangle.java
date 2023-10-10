@@ -1,3 +1,5 @@
+package PersonalQuestions;
+
 public class triangle {
     public static void main(String[] args) {
         int n = 5;

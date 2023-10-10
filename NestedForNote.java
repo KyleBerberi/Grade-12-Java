@@ -1,0 +1,115 @@
+package MissNote;
+
+class NestedLoops {
+    public static void main(String[] args) {
+
+        // create a single row of data using a loop
+        String str = new String();
+        for (int i = 0; i < 6; i++) {
+            str = str + "*";
+        }
+        System.out.format("%s%n%n", str);
+        // Aside: We obviously do not need to "build" a string using a loop - but this is to demonstrate how a single loop "builds" a row
+
+        // Adding a loop outside this loop could repeat this process to create a set of rows - tabular data!
+        // Uses: 2D tile map, image (pixels), table of data
+
+        // Example 1  - Build a 5x6 table of stars
+        // outer loop controls # rows
+        for (int i = 0; i < 5; i++) {
+            // create a single row of data/builds the cols
+            str = new String(); // clear the previous string
+            // inner loop controls # columns
+            for (int j = 0; j < 6; j++) {
+                str = str + "*";
+            } // ends inner loop
+            System.out.format("%s%n", str); // print the line
+        }
+
+        // Note: 1st nested level uses j counter; 2nd nested level uses k counter
+
+        // Example 2 - Right-angled triangle
+        // print out a right-angled triangle with 90 angle in upper right corner
+        for (int i = 0; i < 4; i++) {
+
+            // create a single row of data
+            str = new String(); // clear the previous string
+
+            // add spaces
+            for (int j = 0; j < i; j++) {
+                str = str + " ";
+            }
+
+            // add stars
+            for (int j = 0; j < 4 - i; j++) {
+                str = str + "*";
+            }
+            System.out.format("%s%n", str); // print out the line
+        }
+
+        // What is the output of this?
+        for (int i = 1; i <= 6; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.format("%d", i);
+            }
+            System.out.format("%n");
+        }
+
+        // Be careful when using nested loops - they are much more processor intensive and therefore much less efficient than a loop
+
+        // EXERCISE SOLUTIONS
+        // 1. 3x10 grid of stars to screen
+        // repeat the code that creates a single row of data
+        for (int i = 0; i < 3; i++) {
+            // create a single row of data
+            str = new String(); // clear the previous string
+            for (int j = 0; j < 10; j++) {
+                str = str + "*";
+            }
+            System.out.format("%s%n", str); // print out the line
+        }
+
+        // 2. Draw a 5-row right-angled triangle with a 90-degree angle in the lower right corner.
+        for (int i = 0; i < 5; i++) {
+
+            // create a single row of data
+            str = new String();
+
+            // consecutive nested loops that will build a single string of spaces and stars
+            // add spaces
+            for (int j = 0; j < 4 - i; j++) {
+                str = str + " ";
+            }
+
+            // add stars
+            for (int j = 0; j <= i; j++) {
+                str = str + "*";
+            }
+            System.out.format("%s%n", str); // print out the line
+        }
+
+        // 3. prints out rows of the alphabet
+        for (int i = 0; i < 6; i++) {
+            // create a single row of data
+            str = new String(); // clear the previous string
+            for (int j = 'a'; j <= 'z'; j++) {
+                str = str + (char) j;
+            }
+            System.out.format("%s%n", str); // print out the line
+        }
+
+        // 4. Print each cell location
+        for (int i = 0; i < 5; i++) {
+            // create a single row of data
+            str = new String(); // clear the previous string
+            for (int j = 0; j <= 10; j++) {
+                str = str + "[" + i + "][" + j + "] ";
+            }
+            System.out.format("%s%n", str); // print out the line
+        }
+
+
+    }
+
+
+}
